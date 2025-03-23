@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,10 +7,66 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --base_bg_color: #EBF2F7;
+  --children_bg_color: #FFFFFF;
+  --input_text_color: #B6B6B6;
+}
+
+@media (prefers-color-scheme: dark) {}
+
+@layer base {
+
+  p,
+  h1,
+  label {
+    @apply text-[#212121] m-0;
+  }
+}
+
+@layer components {
+  .box_shadow {
+    box-shadow: 0px 18px 88px -4px rgba(24, 39, 75, 0.14), 0px 8px 28px -6px rgba(24, 39, 75, 0.12);
+  }
+
+  .card_content {
+    @apply text-[13px] font-[700] line-clamp-2;
+  }
+
+  .card_description {
+    @apply text-[12px] font-[400] line-clamp-2;
+  }
+}
+
+@layer utilities {
+  .sidebar_container {
+    @apply h-full flex items-center justify-center p-[8px] rounded-tr-[32px] gap-[20px] rounded-br-[32px] bg-[var(--base_bg_color)] 
+    transition-all duration-300 ease-in-out;
+  }
+
+  .main_container {
+    @apply relative h-full w-[calc(100vw-90px)] lg:w-[calc(100vw-300px)] 2xl:w-[calc(100vw-400px)] flex flex-col items-end justify-center
+     gap-[20px] transition-all duration-300 ease-in-out;
+  }
+
+  .news_grid_container {
+    @apply h-[80%] w-full grid place-items-center auto-rows-auto gap-x-[5px] gap-y-[20px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 overflow-y-auto
+  }
+
+  .news_list_container {
+    @apply h-[80%] w-full block overflow-y-auto py-[20px];
+
+  }
+
+  .news_grid_card {
+    @apply relative h-[90%] w-[85%] min-h-[20rem] max-h-[25rem] min-w-[15rem] max-w-[18rem] flex flex-col py-[7px] justify-evenly items-center rounded-[8px] bg-[var(--children_bg_color)];
+  }
+
+  .new_grid_card {
+    @apply h-[120px] w-[95%] md:w-[85%] lg:w-[70%] m-auto mb-[20px] flex items-center justify-evenly bg-[var(--children_bg_color)] rounded-[14px]
+  }
+  .error_message{
+    @apply text-red-500 min-h-[12px] text-[12px] m-0;
   }
 }
 
