@@ -27,7 +27,7 @@ const SideBar = () => {
                     />
                     <div className="block">
                         <p className="text-[14px] font-semibold">Hi Reader,</p>
-                        <p className="text-[13px]">Here&aposs your news</p>
+                        <p className="text-[13px]">Here&apos;;s your news</p>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@ const SideBar = () => {
                     <button
                         onClick={() => { dispatch(openFeedBack(true)) }}
                         className={`h-[40%] w-[80%] rounded-[8px] ${openForm ? "bg-[#FFAFAF]" : "bg-[#A3FFD3]"} text-[18px] font-semibold cursor-pointer`}>
-                        We&aposre Listening!
+                        We&apos;;re Listening!
                     </button>
                 </div>
             </section>
