@@ -1,6 +1,6 @@
 import axios from "axios"
 
-interface articleType {
+export interface articleType {
     source: {
         id: string,
         name: string
@@ -22,13 +22,7 @@ export interface NewsResultType {
 
 
 export const getNews = async (page: number = 1, limit: number = 6): Promise<NewsResultType> => {
-    const response = await axios.get<NewsResultType>(`${process.env.NEXT_PUBLIC_BASE_URL}/top-headlines`, {
-        params: {
-            sources: 'techcrunch',
-            apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
-            pageSize: limit,
-            page: page,
-        },
+    const response = await axios.get<NewsResultType>(`${process.env.NEXT_PUBLIC_BASE_URL}/top-headlines/category/health/in.json`, {
     });
     return response.data;
 };
