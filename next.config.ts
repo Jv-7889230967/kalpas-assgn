@@ -9,8 +9,9 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "techcrunch.com",
-      },
+        hostname: "**",
+      }
+      
     ],
   },
 };
