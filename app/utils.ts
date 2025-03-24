@@ -21,7 +21,7 @@ export interface NewsResultType {
 }
 
 
-export const getNews = async (page: number = 1, limit: number = 6): Promise<NewsResultType> => {
+export const getNews = async (): Promise<NewsResultType> => {
     const response = await axios.get<NewsResultType>(`${process.env.NEXT_PUBLIC_BASE_URL}/top-headlines/category/health/in.json`, {
     });
     return response.data;
